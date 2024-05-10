@@ -4,44 +4,385 @@
   margin: 0;
 }
 
-
-
-
-.App {
-  text-align: center;
+html {
+  scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "poppins", sans-serif;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header {
+  padding: 10px 10%;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: rgb(96, 170, 175);
+  border-radius: 15px;
+  opacity: 75%;
+}
+
+.profileLogo {
+  width: 150px
+}
+
+.profileIcon {
+  width: 30px;
+  height: 30px;
+  justify-content: space-between;
+  margin: 0 5px;
+  cursor: pointer;
+  position: relative;
+}
+
+.profileIcon::after {
+  content: '';
+  width: 0;
+  height: 3px;
+  background: #6ABFA5;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: transform 0.5s;
+}
+
+.profileIcon:hover {
+  color:rgb(96, 170, 175);
+  transform: translateY(-5px);
+}
+
+
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 10px 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: '';
+  width: 0;
+  height: 3px;
+  background: #6ABFA5;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+
+}
+
+.header-text {
+  margin-top: 50%;
+  margin-left: 50%;
+  font-size: 30px;
+}
+
+.header-text h1 {
+  font-size: 60px;
+  margin-top: 10%;
+}
+
+.header-text h1 span {
+  color: #6ABFA5;
+  outline: white;
+}
+
+/* about */
+
+#about {
+  padding: 80px;
+}
+.sectionHeaderText {
+  width: 150px;
+  float: left;
+  margin: 10px;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.sectionSpacing{
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.about-col-1 {
+  flex-basis: 35%;
+}
+
+.about-col-1 img{
+  width: 100%;
+  border-radius: 15px;
+}
+
+.about-col-2 {
+  flex-basis: 60%;
+}
+
+.subtitle {
+  font-size: 60px;
+  font-weight: 600;
+  color: #fff
+}
+
+.about-col-2 p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.671);
+}
+
+/* tabs */
+.tabTitles {
+  display: flex;
+  margin: 20px 0 40px;
+}
+
+.tabLinks {
+  margin-right: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+}
+
+.tabLinks::after {
+  content: '';
+  width: 0;
+  height: 3px;
+  background: #6ABFA5;
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  transition: 0.5s;
+}
+
+.tabLinks.activeLink::after{
+  width: 65%
+}
+
+.tabContents ul li {
+  list-style: none;
+  margin: 10px 0;
+}
+
+.tabContents ul li span{
+  color: rgb(75, 135, 140);
+  font-size: 14px;
+}
+
+.tabContents {
+  display: none;
+}
+
+.tabContents.activeTab {
+  display: block;
+}
+
+/* my projects */
+
+#projects {
+  padding: 80px;
+
+}
+
+.projectList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 40px;
+  margin-top: 50px;
+}
+
+.project {
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.project img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.5s;
+}
+
+.project:hover img{
+  transform: scale(1.1)
+}
+.sectionHeaderText.projects{
+  width: 190px;
+  float: left;
+  margin: 10px;
+}
+
+.projectList.two{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 40px;
+  margin-top: 0px;
+}
+
+.layer {
+  width: 100%;
+  height: 0;
+  background: linear-gradient(rgba(0,0,0,0.6), rgb(96, 170, 175));
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  transition: height 0.5s;
+}
+
+.project:hover .layer{
+  height: 100%
+}
+
+.layer h3{
+  font-weight: 800;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+.layer p{
+  font-size: 16px;
+}
+.layer a {
+  margin-top: 20px;
+  color: rgb(96, 170, 175);
+  font-size: 18px;
+  line-height: 50px;
+  text-decoration: none;
+  background: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  
+}
+
+.btn {
+  display: block;
+  margin: 50px;
+  width: fit-content;
+  border: 1px solid rgb(96, 170, 175);
+  padding: 14px 50px;
+  border-radius: 16px;
+  text-decoration: none;
+  font-size: 14px;
   color: white;
+  transition: background 0.5s;
 }
 
-.App-link {
-  color: #61dafb;
+.btn:hover {
+  background:rgb(96, 170, 175)
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* contact */
+
+#contact {
+  padding: 80px;
+}
+.sectionHeaderText.contact{
+  width: 190px;
+  float: left;
+  margin: 10px;
+}
+
+.profileIcon.two{
+  width: 30px;
+  height: 30px;
+  justify-content: space-between;
+  margin: 15px 5px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.5s;
+}
+
+.profileIcon.two:hover {
+  color:rgb(96, 170, 175);
+  transform: translateY(-5px);
+
+}
+
+
+.contactLeft {
+  flex-basis: 35%;
+}
+
+.contactRight {
+  flex-basis: 60%;
+}
+
+.contactLeft p {
+  margin-top: 30px; 
+}
+
+.contactSmallI {
+  color:rgb(96, 170, 175);
+  margin-right: 15px;
+  font-size: 25px;
+}
+
+.btn.two {
+  display: inline-block;
+  background: rgb(96, 170, 175);
+}
+
+.contactRight form {
+  width: 100%;
+}
+
+form input, form textarea{
+  width: 100%;
+  border: 0;
+  outline: none;
+  background: #262626;
+  padding: 15px;
+  margin: 15px 0;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 6px;
+}
+
+form .two {
+  padding: 14px 60px;
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.copyright {
+  font-size: 12px;
+  margin-top: 30px;
 }

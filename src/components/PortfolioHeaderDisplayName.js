@@ -1,9 +1,11 @@
 import React from 'react'
+import profileLogo from './images/PortfolioLogo.png'
+import portfolioWording from './images/DylanSilvaWording.png'
 
 export const PortfolioHeaderDisplayName = () => {
   return (
     <>
-        <div className='nameHeader'>Dylan Silva</div>
+        <img className='profileLogo' src={portfolioWording} alt="Profile Logo"/>
     </>
   )
 }

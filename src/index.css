@@ -1,0 +1,12 @@
+body {
+    background: #080808;
+    color: white
+}
+
+.header {
+    width: 100%;
+    height: 100vh;
+    background-image: url(/src/components/images/portfolioImage\ background.jpeg);
+    background-size: cover;
+    background-position: center;
+}
