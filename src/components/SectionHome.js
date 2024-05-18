@@ -1,26 +1,36 @@
-import React from 'react'
-import profileImage from './images/LinkedIn-Photo-cropped.png';
-import { FaGithub } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
+import React, { useState, useEffect } from 'react';
 
-export const SectionHome = () => {
-  return (
-    <>
-    <h3 className='sectionHeader'>
-        Home
-    </h3>
-    <p className='sectionContent'>
+const SectionHome = () => {
+    const [imageSrc, setImageSrc] = useState('');
+
+    useEffect(() => {
+        const updateImageSrc = () => {
+            if (window.innerWidth <= 600) {
+                setImageSrc('./images/linkedInNoBackground.jpeg');
+            } else {
+                setImageSrc('./images/LinkedIn-Photo-cropped.png');
+            }
+        };
+
+        updateImageSrc(); // Initial call to set the image source
+        window.addEventListener('resize', updateImageSrc);
+
+        // Cleanup event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', updateImageSrc);
+        };
+    }, []);
+
+    useEffect(() => {
+        console.log('Image source updated to:', imageSrc); // Debugging line
+    }, [imageSrc]);
+
+    return (
         <div>
-            <img className='profileImage' src={profileImage} alt="Profile Img" width={200} height={200} />
-            <div>
-                <h4>
-                    Dylan Silva
-                </h4>
-                <FaGithub className="profileIcon" onClick={() => window.open("https://github.com/Dylbobin")}/>
-                <FaLinkedin className="profileIcon" onClick={() => window.open("https://www.linkedin.com/in/dylan-silva-cpsc/")}/>
-            </div>
+            <h3>Home</h3>
+            <img src={imageSrc} alt="Profile Img" />
         </div>
-    </p>
-    </>
-  )
-}
+    );
+};
+
+export default SectionHome;

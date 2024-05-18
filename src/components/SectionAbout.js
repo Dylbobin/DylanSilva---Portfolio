@@ -22,7 +22,7 @@ export const SectionAbout = () => {
                         <img className='sectionHeaderText' src={aboutHeader}></img>
                         </div>
                     </h1>
-                        <p>
+                        <p id='aboutContent'>
                         Computer science major with experience working across the full-stack of software development. I’m looking for a role where I can grow and learn from experienced team members while drawing on project experience I have already successfully executed. Currently interested in iOS Development, Data Science, and Web Development.
                         </p>
                     <AboutTabHandler />

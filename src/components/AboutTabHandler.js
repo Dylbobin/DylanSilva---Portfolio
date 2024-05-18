@@ -18,7 +18,7 @@ export const AboutTabHandler = () => {
         <p className={activeTab === 'experience' ? 'tabLinks activeLink' : 'tabLinks'} onClick={() => handleClick('experience')}><FaBuilding /> Experience</p>
         <p className={activeTab === 'education' ? 'tabLinks activeLink' : 'tabLinks'} onClick={() => handleClick('education')}><FaPencil /> Education</p>
     </div>
-    <div className={activeTab === 'skills' ? 'tabContents activeTab' : 'tabContents'} id='skills'>
+    <div id='aboutContent' className={activeTab === 'skills' ? 'tabContents activeTab' : 'tabContents'} id='skills'>
         <ul>
             <li><span>UI/UX</span><br />Designing Web/App interfaces</li>
             <li><span>Data</span><br />Data analysis and Personalized consumer products</li>
@@ -26,7 +26,7 @@ export const AboutTabHandler = () => {
             <li><span>Interpersonal Skills</span><br />Leadership, Communication, Teamwork and Task Management</li>
         </ul>
     </div>
-    <div className={activeTab === 'experience' ? 'tabContents activeTab' : 'tabContents'} id='experience'>
+    <div id='aboutContent' className={activeTab === 'experience' ? 'tabContents activeTab' : 'tabContents'} id='experience'>
         <ul>
             <li><span>Internship</span><br />Enterprise and Core Apps/IT <br/>1st United Credit Union - Pleasanton, Ca</li>
             <li><span>Part-Time</span><br />Customer Service - eService Lead <br/>Titan Shops - Fullerton, Ca</li>

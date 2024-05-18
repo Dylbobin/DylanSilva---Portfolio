@@ -16,9 +16,9 @@ export const SectionContact = () => {
                     <div className='clearfix'>
                         <img className='sectionHeaderText contact' src={contactHeader}></img>
                     </div>
-                    <p><FaRegPaperPlane className='contactSmallI'/>dylansilva22@yahoo.com</p> 
-                    <p><FaPhoneSquareAlt className='contactSmallI'/>+1 (925) 961-6337</p>
-                    <FaGithub className="profileIcon two" onClick={() => window.open("https://github.com/Dylbobin")} />
+                    <p><FaRegPaperPlane className='contactSmallI'/><a href='mailto:dylansilva22@yahoo.com' onsubmit="return false">dylansilva22@yahoo.com</a></p>
+                    <p><FaPhoneSquareAlt className='contactSmallI'/><a href='tel:+1 (925) 961-6337'>+1 (925) 961-6337</a></p>
+                    <p></p><FaGithub className="profileIcon two" onClick={() => window.open("https://github.com/Dylbobin")} />
                     <FaLinkedin className="profileIcon two" onClick={() => window.open("https://www.linkedin.com/in/dylan-silva-cpsc/")} />
                     <a href={resume} download className='btn'> Download Resume </a>
                 </div>
